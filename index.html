@@ -7,778 +7,502 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Nikhil - Personal Portfolio</title>
 
-  <link rel="shortcut icon" href="./assets/images/logo.ico" type="image/x-icon">
+  <!-- GSAP -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
 
-  <link rel="stylesheet" href="./assets/css/style.css">
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
 
+  <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Custom Tailwind Config (for the specified color palette) -->
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'primary': '#F5F5F5', // White Smoke
+            'secondary': '#212529', // Deep Charcoal
+            'accent': '#007BFF', // Professional Blue
+            'accent-hover': '#0056b3',
+          },
+          fontFamily: {
+            poppins: ['Poppins', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    /* Simple scrollbar styling for a better look */
+    .has-scrollbar::-webkit-scrollbar {
+      width: 8px;
+      height: 8px;
+    }
+    .has-scrollbar::-webkit-scrollbar-thumb {
+      background-color: #cbd5e1;
+      border-radius: 10px;
+    }
+    .has-scrollbar::-webkit-scrollbar-thumb:hover {
+      background-color: #a0aec0;
+    }
+    /* Style for active nav link */
+    .navbar-link.active {
+        color: #007BFF;
+    }
+    /* Prepare elements for animation */
+    .sidebar, .main-content {
+        opacity: 0;
+    }
+  </style>
+
 </head>
 
-<body>
+<body class="bg-primary font-poppins text-secondary">
 
-  <main>
+  <main class="flex flex-col lg:flex-row gap-6 p-4 lg:p-6 max-w-7xl mx-auto">
 
-    <aside class="sidebar" data-sidebar>
-
-      <div class="sidebar-info">
-
-        <figure class="avatar-box">
-          <img src="./assets/images/my-avatar.webp" alt="Nikhil Pandey" width="80">
-        </figure>
-
-        <div class="info-content">
-          <h1 class="name" title="Nikhil Pandey">Nikhil Pandey</h1>
-          <p class="title">Senior Fullstack Developer</p>
+    <!-- Sidebar -->
+    <aside class="sidebar lg:w-1/4 bg-white rounded-2xl p-6 shadow-lg transition-all duration-300 ease-in-out lg:sticky lg:top-6 h-fit" data-sidebar>
+      <div class="sidebar-info flex items-center justify-between lg:justify-center lg:flex-col lg:text-center">
+        <div class="flex items-center gap-4 lg:flex-col">
+          <figure class="avatar-box">
+            <img src="assets/images/my-avatar.webp" alt="Nikhil Pandey" width="80" class="rounded-full">
+          </figure>
+          <div class="info-content">
+            <h1 class="name text-2xl font-bold text-secondary" title="Nikhil Pandey">Nikhil Pandey</h1>
+            <p class="title bg-gray-100 text-gray-600 px-3 py-1 rounded-md text-sm font-medium mt-1 inline-block">Senior Fullstack Developer</p>
+          </div>
         </div>
-
-        <button class="info_more-btn" data-sidebar-btn>
-          <span>Show Contacts</span>
-          <ion-icon name="chevron-down"></ion-icon>
+        <button class="info_more-btn lg:hidden p-2 rounded-md bg-gray-100 hover:bg-gray-200" data-sidebar-btn>
+          <ion-icon name="chevron-down" class="text-lg"></ion-icon>
         </button>
-
       </div>
 
-      <div class="sidebar-info_more">
-
-        <div class="separator"></div>
-
-        <ul class="contacts-list">
-
-          <li class="contact-item">
-            <div class="icon-box">
-              <ion-icon name="mail-outline"></ion-icon>
-            </div>
+      <div class="sidebar-info_more mt-4 pt-4 border-t border-gray-200">
+        <ul class="contacts-list space-y-4">
+          <li class="contact-item flex items-center gap-4">
+            <div class="icon-box text-accent text-2xl"><ion-icon name="mail-outline"></ion-icon></div>
             <div class="contact-info">
-              <p class="contact-title">Email</p>
-              <a href="mailto:nikhilpandey00999@gmail.com" class="contact-link">nikhilpandey00999@gmail.com</a>
+              <p class="contact-title text-xs text-gray-500">Email</p>
+              <a href="mailto:nikhilpandey00999@gmail.com" class="contact-link text-sm hover:text-accent transition-colors">nikhilpandey00999@gmail.com</a>
             </div>
           </li>
-
-          <li class="contact-item">
-            <div class="icon-box">
-              <ion-icon name="phone-portrait-outline"></ion-icon>
-            </div>
+          <li class="contact-item flex items-center gap-4">
+            <div class="icon-box text-accent text-2xl"><ion-icon name="phone-portrait-outline"></ion-icon></div>
             <div class="contact-info">
-              <p class="contact-title">Phone</p>
-              <a href="tel:+918954690093" class="contact-link">+91 8954690093</a>
+              <p class="contact-title text-xs text-gray-500">Phone</p>
+              <a href="tel:+918954690093" class="contact-link text-sm hover:text-accent transition-colors">+91 8954690093</a>
             </div>
           </li>
-
-          <li class="contact-item">
-            <div class="icon-box">
-              <ion-icon name="calendar-outline"></ion-icon>
-            </div>
+          <li class="contact-item flex items-center gap-4">
+            <div class="icon-box text-accent text-2xl"><ion-icon name="calendar-outline"></ion-icon></div>
             <div class="contact-info">
-              <p class="contact-title">Birthday</p>
-              <time datetime="1994-11-05">November 05, 1994</time>
+              <p class="contact-title text-xs text-gray-500">Birthday</p>
+              <time datetime="1994-11-05" class="text-sm">November 05, 1994</time>
             </div>
           </li>
-
-          <li class="contact-item">
-            <div class="icon-box">
-              <ion-icon name="location-outline"></ion-icon>
-            </div>
+          <li class="contact-item flex items-center gap-4">
+            <div class="icon-box text-accent text-2xl"><ion-icon name="location-outline"></ion-icon></div>
             <div class="contact-info">
-              <p class="contact-title">Location</p>
-              <address>Gurugram, Haryana, India</address>
+              <p class="contact-title text-xs text-gray-500">Location</p>
+              <address class="text-sm not-italic">Gurugram, Haryana, India</address>
             </div>
-          </li>
-
-        </ul>
-
-        <div class="separator"></div>
-
-        <ul class="social-list">
-
-          <li class="social-item">
-            <a href="https://github.com/androidnikhil" target="_blank" class="social-link">
-              <ion-icon name="logo-github"></ion-icon>
-            </a>
-          </li>
-
-          <li class="social-item">
-            <a href="https://www.linkedin.com/in/nikhil-pandey-9a0278a1/" target="_blank" class="social-link">
-              <ion-icon name="logo-linkedin"></ion-icon>
-            </a>
-          </li>
-
-          <li class="social-item">
-            <a href="https://www.instagram.com/nikhil00999/" target="_blank" class="social-link">
-              <ion-icon name="logo-instagram"></ion-icon>
-            </a>
           </li>
         </ul>
-
+        <div class="mt-4 pt-4 border-t border-gray-200"></div>
+        <ul class="social-list flex items-center justify-center gap-4 mt-4">
+          <li class="social-item">
+            <a href="https://github.com/androidnikhil" target="_blank" class="social-link text-2xl text-gray-500 hover:text-accent transition-colors"><ion-icon name="logo-github"></ion-icon></a>
+          </li>
+          <li class="social-item">
+            <a href="https://www.linkedin.com/in/nikhil-pandey-9a0278a1/" target="_blank" class="social-link text-2xl text-gray-500 hover:text-accent transition-colors"><ion-icon name="logo-linkedin"></ion-icon></a>
+          </li>
+          <li class="social-item">
+            <a href="https://www.instagram.com/nikhil00999/" target="_blank" class="social-link text-2xl text-gray-500 hover:text-accent transition-colors"><ion-icon name="logo-instagram"></ion-icon></a>
+          </li>
+        </ul>
       </div>
-
     </aside>
 
-    <div class="main-content">
-
-      <nav class="navbar">
-
-        <ul class="navbar-list">
-
-          <li class="navbar-item">
-            <button class="navbar-link  active" data-nav-link>About</button>
-          </li>
-
-          <li class="navbar-item">
-            <button class="navbar-link" data-nav-link>Resume</button>
-          </li>
-
-          <li class="navbar-item">
-            <button class="navbar-link" data-nav-link>Portfolio</button>
-          </li>
-
-          <li class="navbar-item">
-            <button class="navbar-link" data-nav-link>Blog</button>
-          </li>
-
-          <li class="navbar-item">
-            <button class="navbar-link" data-nav-link>Contact</button>
-          </li>
-
+    <!-- Main Content -->
+    <div class="main-content lg:w-3/4">
+      <nav class="navbar bg-white rounded-2xl shadow-sm p-2 mb-6">
+        <ul class="navbar-list flex justify-around">
+          <li class="navbar-item"><button class="navbar-link active font-medium text-gray-600 hover:text-accent transition-colors px-4 py-2" data-nav-link>About</button></li>
+          <li class="navbar-item"><button class="navbar-link font-medium text-gray-600 hover:text-accent transition-colors px-4 py-2" data-nav-link>Resume</button></li>
+          <li class="navbar-item"><button class="navbar-link font-medium text-gray-600 hover:text-accent transition-colors px-4 py-2" data-nav-link>Portfolio</button></li>
+          <li class="navbar-item"><button class="navbar-link font-medium text-gray-600 hover:text-accent transition-colors px-4 py-2" data-nav-link>Blog</button></li>
+          <li class="navbar-item"><button class="navbar-link font-medium text-gray-600 hover:text-accent transition-colors px-4 py-2" data-nav-link>Contact</button></li>
         </ul>
-
       </nav>
 
-      <article class="about  active" data-page="about">
-
-        <header>
-          <h2 class="h2 article-title">About me</h2>
-        </header>
-
-        <section class="about-text">
-          <p>
-            Diligent software engineer with 6+ years of experience in commercial application and software development.  I am eager to build innovative and cutting-edge business solutions for the impressive suite of clients within its global reach. 
-          </p>
-          <header>
-            <h2 class="h4 article-title">Core Competencies</h2>
+      <div class="content-container">
+        <!-- About Page -->
+        <article class="about active bg-white rounded-2xl p-6 shadow-sm" data-page="about">
+          <header class="border-b border-gray-200 pb-4 mb-4">
+            <h2 class="article-title text-3xl font-bold text-secondary">About Me</h2>
           </header>
-          <p>
-            <br>• Understanding the requirement and implement it in terms of the coding </br>
-            <br>• Expertise in Angular, NodeJS and PHP language </br>
-            <br>• Expertise in Power Platform SharePoint, PowerApps, Power automate. </br>
-            <br>• Worked on more than 10 projects with different technology stack </br>
-            <br>• Good knowledge of API development and Integration </br>
-            <br>• Hands on experience of integrating third party APIs like Pusher, Firebase, Mailchimp, Twilio, Chat, Captcha </br>
-            <br>• Hands on experience in SQL query, database design </br>
-            <br>• Hands on experience in Web and Mobile App development </br>
-            <br>• Exposure in Flutter, RubyOnRail, Android Studio, Python and NextJs </br>
-          </p>
-          <header>
-            <h2 class="h4 article-title">Key Contributions</h2>
-          </header>
-          <p>
-            <br>• Successfully collaborated with cross-functional teams, including designers and QA professionals, to deliver seamless and intuitive user experiences.</br>
-            <br>• Ensured app responsiveness and performance through thorough testing and debugging before release. </br>
-            <br>• Delivered scalable and maintainable applications by adhering to clean coding principles and best practices. </br>
-            <br>• Proactively stayed ahead of mobile development trends to incorporate cutting-edge features into apps. </br>
-          </p>
+          <section class="about-text space-y-4 text-gray-700">
+            <p>Diligent software engineer with 6+ years of experience in commercial application and software development. I am eager to build innovative and cutting-edge business solutions for the impressive suite of clients within its global reach.</p>
+            <div>
+              <h3 class="h4 article-title text-xl font-semibold text-secondary mb-2">Core Competencies</h3>
+              <ul class="list-disc list-inside space-y-1">
+                <li>Understanding the requirement and implement it in terms of the coding</li>
+                <li>Expertise in Angular, NodeJS and PHP language</li>
+                <li>Expertise in Power Platform SharePoint, PowerApps, Power automate.</li>
+                <li>Worked on more than 10 projects with different technology stack</li>
+                <li>Good knowledge of API development and Integration</li>
+                <li>Hands on experience of integrating third party APIs like Pusher, Firebase, Mailchimp, Twilio, Chat, Captcha</li>
+                <li>Hands on experience in SQL query, database design</li>
+                <li>Hands on experience in Web and Mobile App development</li>
+                <li>Exposure in Flutter, RubyOnRail, Android Studio, Python and NextJs</li>
+              </ul>
+            </div>
+            <div>
+              <h3 class="h4 article-title text-xl font-semibold text-secondary mb-2">Key Contributions</h3>
+              <ul class="list-disc list-inside space-y-1">
+                <li>Successfully collaborated with cross-functional teams, including designers and QA professionals, to deliver seamless and intuitive user experiences.</li>
+                <li>Ensured app responsiveness and performance through thorough testing and debugging before release.</li>
+                <li>Delivered scalable and maintainable applications by adhering to clean coding principles and best practices.</li>
+                <li>Proactively stayed ahead of mobile development trends to incorporate cutting-edge features into apps.</li>
+              </ul>
+            </div>
           </section>
 
-
-        <section class="service">
-
-          <h3 class="h3 service-title">What i'm doing</h3>
-
-          <ul class="service-list">
-            <li class="service-item">
-              <div class="service-icon-box">
-                <img src="./assets/images/icon-dev.svg" alt="web development icon" width="40">
-              </div>
-              <div class="service-content-box">
-                <h4 class="h4 service-item-title">Web Development</h4>
-                <p class="service-item-text">
-                  Developing robust and scalable web applications using various technologies.
-                </p>
-              </div>
-            </li>
-
-            <li class="service-item">
-              <div class="service-icon-box">
-                <img src="./assets/images/icon-app.svg" alt="mobile app icon" width="40">
-              </div>
-              <div class="service-content-box">
-                <h4 class="h4 service-item-title">Mobile App Development</h4>
-                <p class="service-item-text">
-                  Professional development of applications for various mobile platforms.
-                </p>
-              </div>
-            </li>
-
-            <li class="service-item">
-              <div class="service-icon-box">
-                <img src="./assets/images/icon-design.svg" alt="API development icon" width="40">
-              </div>
-              <div class="service-content-box">
-                <h4 class="h4 service-item-title">API Development & Integration</h4>
-                <p class="service-item-text">
-                  Building and integrating APIs for seamless data exchange.
-                </p>
-              </div>
-            </li>
-
-            </ul>
-
-        </section>
-
-
-        <section class="testimonials">
-
-          <h3 class="h3 testimonials-title">Testimonials</h3>
-
-          <ul class="testimonials-list has-scrollbar">
-
-            <li class="testimonials-item">
-              <div class="content-card" data-testimonials-item>
-
-                <figure class="testimonials-avatar-box">
-                  <img src="./assets/images/avatar-1.png" alt="Client From USA" width="60" data-testimonials-avatar>
-                </figure>
-
-                <h4 class="h4 testimonials-item-title" data-testimonials-title>Client From USA</h4>
-
-                <div class="testimonials-text" data-testimonials-text>
-                  <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
-                    industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type
-                    and scrambled it to make a type specimen book. It has survived not only five centuries, but also the
-                    leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s
-                    with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop
-                    publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                  </p>
+          <section class="service mt-8">
+            <h3 class="h3 service-title text-2xl font-bold text-secondary mb-6">What I'm Doing</h3>
+            <ul class="service-list grid md:grid-cols-2 gap-6">
+              <li class="service-item flex items-start gap-4 p-6 bg-gray-50 rounded-xl border border-gray-200 transition-transform duration-300 hover:scale-105">
+                <div class="service-icon-box"><img src="https://placehold.co/40x40/007BFF/FFFFFF?text=WEB" alt="web development icon" width="40" class="rounded-lg"></div>
+                <div class="service-content-box">
+                  <h4 class="h4 service-item-title text-lg font-semibold">Web Development</h4>
+                  <p class="service-item-text text-gray-600 mt-1">Developing robust and scalable web applications using various technologies.</p>
                 </div>
-
-              </div>
-            </li>
-
-          </ul>
-
-        </section>
-
-
-        <div class="modal-container" data-modal-container>
-
-          <div class="overlay" data-overlay></div>
-
-          <section class="testimonials-modal">
-
-            <button class="modal-close-btn" data-modal-close-btn>
-              <ion-icon name="close-outline"></ion-icon>
-            </button>
-
-            <div class="modal-img-wrapper">
-              <figure class="modal-avatar-box">
-                <img src="./assets/images/avatar-1.png" alt="Client From USA" width="80" data-modal-img>
-              </figure>
-
-              <img src="./assets/images/icon-quote.svg" alt="quote icon">
-            </div>
-
-            <div class="modal-content">
-
-              <h4 class="h3 modal-title" data-modal-title>Client From USA</h4>
-
-              <time datetime="2021-06-14">14 June, 2021</time>
-
-              <div data-modal-text>
-                <p>
-                  Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
-                  industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and
-                  scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap
-                  into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the
-                  release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing
-                  software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-              </div>
-
-            </div>
-
+              </li>
+              <li class="service-item flex items-start gap-4 p-6 bg-gray-50 rounded-xl border border-gray-200 transition-transform duration-300 hover:scale-105">
+                <div class="service-icon-box"><img src="https://placehold.co/40x40/007BFF/FFFFFF?text=APP" alt="mobile app icon" width="40" class="rounded-lg"></div>
+                <div class="service-content-box">
+                  <h4 class="h4 service-item-title text-lg font-semibold">Mobile App Development</h4>
+                  <p class="service-item-text text-gray-600 mt-1">Professional development of applications for various mobile platforms.</p>
+                </div>
+              </li>
+              <li class="service-item flex items-start gap-4 p-6 bg-gray-50 rounded-xl border border-gray-200 transition-transform duration-300 hover:scale-105">
+                <div class="service-icon-box"><img src="https://placehold.co/40x40/007BFF/FFFFFF?text=API" alt="API development icon" width="40" class="rounded-lg"></div>
+                <div class="service-content-box">
+                  <h4 class="h4 service-item-title text-lg font-semibold">API Development & Integration</h4>
+                  <p class="service-item-text text-gray-600 mt-1">Building and integrating APIs for seamless data exchange.</p>
+                </div>
+              </li>
+              <li class="service-item flex items-start gap-4 p-6 bg-gray-50 rounded-xl border border-gray-200 transition-transform duration-300 hover:scale-105">
+                <div class="service-icon-box"><img src="https://placehold.co/40x40/007BFF/FFFFFF?text=SEO" alt="SEO & Digital Marketing icon" width="40" class="rounded-lg"></div>
+                <div class="service-content-box">
+                  <h4 class="h4 service-item-title text-lg font-semibold">SEO & Digital Marketing</h4>
+                  <p class="service-item-text text-gray-600 mt-1">Optimizing websites for search engines and running digital marketing campaigns.</p>
+                </div>
+              </li>
+            </ul>
           </section>
-
-        </div>
-
-
         </article>
 
-
-      <article class="resume" data-page="resume">
-
-        <header>
-          <h2 class="h2 article-title">Resume</h2>
-        </header>
-
-        <section class="timeline">
-
-          <div class="title-wrapper">
-            <div class="icon-box">
-              <ion-icon name="book-outline"></ion-icon>
-            </div>
-
-            <h3 class="h3">Education</h3>
-          </div>
-
-          <ol class="timeline-list">
-
-            <li class="timeline-item">
-              <h4 class="h4 timeline-item-title">Bachelor in Science (BSC)</h4>
-              <span>B.R Ambedkar University, Agra | 2016 </span>
-              <p class="timeline-text">
-                (50%) 
-              </p>
-            </li>
-
-            <li class="timeline-item">
-              <h4 class="h4 timeline-item-title">Higher Secondary (10+2)</h4>
-              <span>ICSE Board | 2013 </span>
-              <p class="timeline-text">
-                (75%) 
-              </p>
-            </li>
-
-            <li class="timeline-item">
-              <h4 class="h4 timeline-item-title">Senior Secondary School (10th)</h4>
-              <span>ISC Board | 20xx </span> <p class="timeline-text">
-                (65%) 
-              </p>
-            </li>
-
-            <li class="timeline-item">
-              <h4 class="h4 timeline-item-title">Diploma in Android</h4>
-              <span>Ducat Noida | 2019 </span>
-              <p class="timeline-text">
-                </p>
-            </li>
-
-          </ol>
-
-        </section>
-
-        <section class="timeline">
-
-          <div class="title-wrapper">
-            <div class="icon-box">
-              <ion-icon name="book-outline"></ion-icon>
-            </div>
-
-            <h3 class="h3">Experience</h3>
-          </div>
-
-          <ol class="timeline-list">
-
-            <li class="timeline-item">
-              <h4 class="h4 timeline-item-title">Senior Full stack Developer </h4>
-              <span>Omnicom Media Group (Annalect), Gurgaon </span>
-              <span>November 2022 to Present </span>
-              <p class="timeline-text">
-                Project: www.ketchum.com <br>
-                About Project: Maintenance of various sites and new project. <br>
-                Technology: MS SQL, CSS, JavaScript, Ajax, jQuery, NodeJS, PowerApps, SharePoint, Power automates, WordPress, PHP, Drupal <br>
-                KRA:<br>
-                • Developing new component <br>
-                • Integrating and binding of features API <br>
-                • Fixing bugs in developed features <br>
-                • Making features more user friendly as per user feedback <br>
-                • Migrations of sites 
-              </p>
-            </li>
-
-            <li class="timeline-item">
-              <h4 class="h4 timeline-item-title">Fullstack Developer </h4>
-              <span>Innvoage Technologies Private Limited, Gurgaon </span>
-              <span>5 April 2022 to October 2022 </span>
-              <p class="timeline-text">
-                Project 1: www.eoovbook.com (March to July 22) <br>
-                About Project: A social media application with news feature <br>
-                Technology: AngularJS, Firebase, Dotnet, MS SQL, CSS, JavaScript, Ajax, jQuery, NodeJS <br>
-                KRA:<br>
-                • Developing new component in Angular <br>
-                • Integrating and binding of features API in Angular <br>
-                • Fixing bugs in developed features <br>
-                • Making features more user friendly as per user feedback <br>
-                • Integrating Pusher API for chat service <br>
-                • Integrating Firebase API for Social Media Login feature <br>
-                • Integrating Firebase API for OTP service <br>
-                • Using JS, Ajax and jQuery for better UX <br><br>
-                Project 2: ishtarconsultants.co (June to Aug 22) <br>
-                About Project: It is a Inhouse project to automate sales, purchase, accounting and billing process. <br>
-                Technology: PHP CodeIgniter, MS SQL, HTML, CSS, JavaScript, Ajax, jQuery <br>
-                KRA:<br>
-                • Worked on Sales module in PHP CodeIgniter using MVC framework <br>
-                • Fixing bugs in developed features <br>
-                • Making features more user friendly as per user feedback <br>
-                • Using JS, Ajax and jQuery for better UX <br><br>
-                Project 3: News Portal (Sep to Present) <br>
-                About Project: It is a news portal where user can come to read the news and talented new journalist can join the platform to publish their news <br>
-                Technology: NextJS, MongoDB, NodeJS, Bootstrap, JavaScript, JWT, Axios, ReactJS <br>
-                KRA:<br>
-                • Developed the application architecture (front end and backend) <br>
-                • Worked on News reporter register module <br>
-                • Worked on News publishing module <br>
-                • Working on News review module <br>
-                • Making features more user friendly as per user feedback <br>
-                • Using JS, Ajax and jQuery for better UX 
-              </p>
-            </li>
-
-            <li class="timeline-item">
-              <h4 class="h4 timeline-item-title">Senior Web Developer </h4>
-              <span>Nicosur Technologies Limited, Agra </span>
-              <span>1 March 2021 to 1 April 2022 </span>
-              <p class="timeline-text">
-                Project 1: www.handwrittenwines.com <br>
-                About Project: Online tracing of customer behaviors on ecommerce store.  Script is currently running to capture customer information and transmit it to the client's email automation platform.  Data filter custom validation on the forms. <br>
-                Technology: PHP, JavaScript, Ajax, jQuery <br><br>
-                Project 2: www.bloomerang.wpengine.com <br>
-                About Project: Created responsive UI for the screens (Desktop and Large Screen using Media Queries).  Responsibility Created Database and API’s using SQL and Java and integrated APIs in dynamic html structure.  This project is for a television screen in Hawaii. Obtaining data from the REST API and presenting it on the TV screen, with a popup appearing after matching the security code displayed on the screen. <br>
-                Technology: PHP, CSS, JavaScript, Ajax, jQuery <br><br>
-                Project 3: Maintaining WordPress Sites <br>
-                About Project: Maintained 90+ WordPress sites, integrate audio eye and theme customization. WooCommerce API integration. <br>
-                Technology: WordPress 
-              </p>
-            </li>
-
-            <li class="timeline-item">
-              <h4 class="h4 timeline-item-title">Web Developer </h4>
-              <span>Codeunix Technologies Pvt. Ltd, Agra </span>
-              <span>May 2018 to July 2019 </span>
-              <p class="timeline-text">
-                Project 1: www.poojapublicschools.com <br>
-                About Project: Admin Dashboards that you can view and access from anywhere, anytime.  Personalize them to generate reliable organization-wide insights quickly in a few clicks, it simplifies accounting operations with an easy-to-use dashboard.  Gain an instant visibility into performances at the individual, departmental level.  Make use of individual reporting, analysis, visualization, planning and forecasting capabilities to improve organizational process and performance. <br>
-                Technology: PHP, MySQL, CSS, JavaScript, Ajax, jQuery <br>
-                KRA:<br>
-                • Created dynamic dashboard for Expense, School Fee calculation, <br>
-                • Generating invoice for every student. <br>
-                • Created custom dynamic form validations. <br>
-                • Created complex and dynamic HTML structure. <br>
-                • WhatsApp chat integrations. <br>
-                • Payment gateway integration. <br>
-                • Integrated google map <br>
-                • Created generic components. <br>
-                • Created custom directives and pipes. <br><br>
-                Project 2: www.ridiptawelfarefoundation.com <br>
-                About Project: A website dedicated to assisting the poor and those in need.  The website's purpose is to automate the process of receiving donations from all over the world. <br>
-                Technology: PHP, MySQL, CSS, JavaScript, Ajax, jQuery <br>
-                KRA:<br>
-                • Created admin dashboard. <br>
-                • Created custom dynamic form validations. <br>
-                • Created complex and dynamic HTML structure. <br>
-                • PayU Money Payment gateway integration. <br>
-                • Created generic components. 
-              </p>
-            </li>
-
-            <li class="timeline-item">
-              <h4 class="h4 timeline-item-title">Web Developer </h4>
-              <span>Devashya Soft Solutions Private Limited </span>
-              <span>Feb 2017 to April 2018 </span>
-              <p class="timeline-text">
-                Project: www.2xcell.in <br>
-                About Project: An online and offline learning app for students with collaboration of schools <br>
-                Technology: Angular, Firebase, MS SQL, CSS, JavaScript, Ajax, jQuery <br>
-                KRA:<br>
-                • Developed School Master module for school management <br>
-                • Developed Course upload module <br>
-                • Integrating and binding of features API in Angular <br>
-                • Fixing bugs in developed features <br>
-                • Making features more user friendly as per user feedback <br>
-                • Whitebox testing 
-              </p>
-            </li>
-
-            </ol>
-
-        </section>
-
-        <section class="skill">
-
-          <h3 class="h3 skills-title">My skills</h3>
-
-          <ul class="skills-list content-card">
-
-            <li class="skills-item">
-              <div class="title-wrapper">
-                <h5 class="h5">PHP</h5>
-                <data value="90">90%</data>
-              </div>
-              <div class="skill-progress-bg">
-                <div class="skill-progress-fill" style="width: 90%;"></div>
-              </div>
-            </li>
-
-            <li class="skills-item">
-              <div class="title-wrapper">
-                <h5 class="h5">JavaScript</h5>
-                <data value="95">95%</data>
-              </div>
-              <div class="skill-progress-bg">
-                <div class="skill-progress-fill" style="width: 95%;"></div>
-              </div>
-            </li>
-
-            <li class="skills-item">
-              <div class="title-wrapper">
-                <h5 class="h5">HTML/CSS</h5>
-                <data value="90">90%</data>
-              </div>
-              <div class="skill-progress-bg">
-                <div class="skill-progress-fill" style="width: 90%;"></div>
-              </div>
-            </li>
-
-            <li class="skills-item">
-              <div class="title-wrapper">
-                <h5 class="h5">Angular</h5>
-                <data value="80">80%</data>
-              </div>
-              <div class="skill-progress-bg">
-                <div class="skill-progress-fill" style="width: 80%;"></div>
-              </div>
-            </li>
-
-            <li class="skills-item">
-              <div class="title-wrapper">
-                <h5 class="h5">NodeJS</h5>
-                <data value="75">75%</data>
-              </div>
-              <div class="skill-progress-bg">
-                <div class="skill-progress-fill" style="width: 75%;"></div>
-              </div>
-            </li>
-
-            <li class="skills-item">
-              <div class="title-wrapper">
-                <h5 class="h5">MySQL/SQL</h5>
-                <data value="85">85%</data>
-              </div>
-              <div class="skill-progress-bg">
-                <div class="skill-progress-fill" style="width: 85%;"></div>
-              </div>
-            </li>
-
-            <li class="skills-item">
-              <div class="title-wrapper">
-                <h5 class="h5">WordPress</h5>
-                <data value="80">80%</data>
-              </div>
-              <div class="skill-progress-bg">
-                <div class="skill-progress-fill" style="width: 80%;"></div>
-              </div>
-            </li>
-
-            <li class="skills-item">
-              <div class="title-wrapper">
-                <h5 class="h5">Power Platform (PowerApps, Power Automate, SharePoint)</h5>
-                <data value="90">90%</data>
-              </div>
-              <div class="skill-progress-bg">
-                <div class="skill-progress-fill" style="width: 90%;"></div>
-              </div>
-            </li>
-
-            <li class="skills-item">
-              <div class="title-wrapper">
-                <h5 class="h5">NextJS</h5>
-                <data value="70">70%</data>
-              </div>
-              <div class="skill-progress-bg">
-                <div class="skill-progress-fill" style="width: 70%;"></div>
-              </div>
-            </li>
-
-            </ul>
-
-        </section>
-
-      </article>
-
-
-      <article class="portfolio" data-page="portfolio">
-
-        <header>
-          <h2 class="h2 article-title">Portfolio</h2>
-        </header>
-
-        <section class="projects">
-
-          <ul class="filter-list">
-
-            <li class="filter-item">
-              <button class="active" data-filter-btn>All</button>
-            </li>
-
-            <li class="filter-item">
-              <button data-filter-btn>Web Development</button>
-            </li>
-
-            <li class="filter-item">
-              <button data-filter-btn>Mobile Applications</button>
-            </li>
-
-            </ul>
-
-          <div class="filter-select-box">
-
-            <button class="filter-select" data-select>
-
-              <div class="select-value" data-selecct-value>Select category</div>
-
-              <div class="select-icon">
-                <ion-icon name="chevron-down"></ion-icon>
-              </div>
-
-            </button>
-
-            <ul class="select-list">
-
-              <li class="select-item">
-                <button data-select-item>All</button>
-              </li>
-
-              <li class="select-item">
-                <button data-select-item>Web Development</button>
-              </li>
-
-              <li class="select-item">
-                <button data-select-item>Mobile Applications</button>
-              </li>
-
-              </ul>
-
-          </div>
-
-          <ul class="project-list">
-            <li class="project-item  active" data-filter-item data-category="web development">
-              <a href="#">
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-                  <img src="./assets/images/project-1.jpg" alt="Example Web Project" loading="lazy">
-                </figure>
-                <h3 class="project-title">Example Web Project 1</h3>
-                <p class="project-category">Web Development</p>
-              </a>
-            </li>
-
-            <li class="project-item  active" data-filter-item data-category="mobile applications">
-              <a href="#">
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-                  <img src="./assets/images/project-2.png" alt="Example Mobile App" loading="lazy">
-                </figure>
-                <h3 class="project-title">Example Mobile App 1</h3>
-                <p class="project-category">Mobile Applications</p>
-              </a>
-            </li>
-
-            </ul>
-
-        </section>
-
-      </article>
-
-
-      <article class="blog" data-page="blog">
-
-        <header>
-          <h2 class="h2 article-title">Blog</h2>
-        </header>
-
-        <section class="blog-posts">
-
-          <ul class="blog-posts-list">
-            <li class="blog-post-item">
-              <a href="https://medium.com/@i_m_alfaizkhan/exploring-the-stripe-payment-gateway-in-flutter-e8524a0ade75"
-                target="_blank">
-
-                <figure class="blog-banner-box">
-                  <img src="./assets/images/blog-1.jpg" alt="Exploring the Stripe Payment Gateway In Flutter"
-                    loading="lazy">
-                </figure>
-
-                <div class="blog-content">
-
-                  <div class="blog-meta">
-                    <p class="blog-category">Flutter</p>
-
-                    <span class="dot"></span>
-
-                    <time datetime="2022-07-27">Jul 27, 2022 · 7 min read</time>
-                  </div>
-
-                  <h3 class="h3 blog-item-title">Exploring the Stripe Payment Gateway In Flutter</h3>
-
-                  <p class="blog-text">
-                    Stripe payment gateway integration in flutter project.
-                  </p>
-
+        <!-- Resume Page -->
+        <article class="resume hidden bg-white rounded-2xl p-6 shadow-sm" data-page="resume">
+            <header class="border-b border-gray-200 pb-4 mb-6">
+                <h2 class="h2 article-title text-3xl font-bold text-secondary">Resume</h2>
+            </header>
+            <section class="timeline">
+                <div class="title-wrapper flex items-center gap-4 mb-6">
+                    <div class="icon-box text-accent text-3xl"><ion-icon name="book-outline"></ion-icon></div>
+                    <h3 class="h3 text-2xl font-bold">Education</h3>
                 </div>
+                <ol class="timeline-list relative border-l-2 border-gray-200 ml-4 space-y-8">
+                    <li class="timeline-item ml-8">
+                        <div class="absolute w-4 h-4 bg-accent rounded-full -left-[9px] border-2 border-white"></div>
+                        <h4 class="h4 timeline-item-title text-lg font-semibold">Bachelor in Science (BSc)</h4>
+                        <span class="text-sm text-gray-500">B.R Ambedkar University, Agra | 2016 (50%)</span>
+                    </li>
+                    <li class="timeline-item ml-8">
+                        <div class="absolute w-4 h-4 bg-accent rounded-full -left-[9px] border-2 border-white"></div>
+                        <h4 class="h4 timeline-item-title text-lg font-semibold">Higher Secondary (10+2)</h4>
+                        <span class="text-sm text-gray-500">ICSE Board | 2013 (75%)</span>
+                    </li>
+                     <li class="timeline-item ml-8">
+                        <div class="absolute w-4 h-4 bg-accent rounded-full -left-[9px] border-2 border-white"></div>
+                        <h4 class="h4 timeline-item-title text-lg font-semibold">Diploma in Android</h4>
+                        <span class="text-sm text-gray-500">Ducat Noida | 2019</span>
+                    </li>
+                </ol>
+            </section>
+            <section class="timeline mt-10">
+                <div class="title-wrapper flex items-center gap-4 mb-6">
+                    <div class="icon-box text-accent text-3xl"><ion-icon name="briefcase-outline"></ion-icon></div>
+                    <h3 class="h3 text-2xl font-bold">Experience</h3>
+                </div>
+                <ol class="timeline-list relative border-l-2 border-gray-200 ml-4 space-y-8">
+                    <li class="timeline-item ml-8">
+                        <div class="absolute w-4 h-4 bg-accent rounded-full -left-[9px] border-2 border-white"></div>
+                        <h4 class="h4 timeline-item-title text-lg font-semibold">Senior Full stack Developer</h4>
+                        <span class="text-sm text-gray-500 block">Omnicom Media Group (Annalect), Gurgaon</span>
+                        <span class="text-sm text-gray-500 block">November 2022 to Present</span>
+                        <p class="timeline-text text-gray-600 mt-2 text-sm">Maintained various sites and worked on new projects. Tech stack includes MS SQL, CSS, JS, NodeJS, Power Platform, WordPress, PHP, Drupal.</p>
+                    </li>
+                    <li class="timeline-item ml-8">
+                        <div class="absolute w-4 h-4 bg-accent rounded-full -left-[9px] border-2 border-white"></div>
+                        <h4 class="h4 timeline-item-title text-lg font-semibold">Fullstack Developer</h4>
+                        <span class="text-sm text-gray-500 block">Innvoage Technologies Private Limited, Gurgaon</span>
+                        <span class="text-sm text-gray-500 block">April 2022 to October 2022</span>
+                        <p class="timeline-text text-gray-600 mt-2 text-sm">Worked on multiple projects including a social media app, an in-house automation tool, and a news portal using technologies like AngularJS, .NET, PHP, and NextJS.</p>
+                    </li>
+                </ol>
+            </section>
+            <section class="skill mt-10">
+                <h3 class="h3 skills-title text-2xl font-bold mb-6">My Skills</h3>
+                <ul class="skills-list grid md:grid-cols-2 gap-x-8 gap-y-4">
+                    <li class="skills-item">
+                        <div class="title-wrapper flex justify-between mb-1"><h5 class="h5 font-medium">PHP</h5><data value="90">90%</data></div>
+                        <div class="skill-progress-bg bg-gray-200 rounded-full h-2"><div class="skill-progress-fill bg-accent rounded-full h-2" style="width: 90%;"></div></div>
+                    </li>
+                    <li class="skills-item">
+                        <div class="title-wrapper flex justify-between mb-1"><h5 class="h5 font-medium">JavaScript</h5><data value="95">95%</data></div>
+                        <div class="skill-progress-bg bg-gray-200 rounded-full h-2"><div class="skill-progress-fill bg-accent rounded-full h-2" style="width: 95%;"></div></div>
+                    </li>
+                    <li class="skills-item">
+                        <div class="title-wrapper flex justify-between mb-1"><h5 class="h5 font-medium">HTML/CSS</h5><data value="90">90%</data></div>
+                        <div class="skill-progress-bg bg-gray-200 rounded-full h-2"><div class="skill-progress-fill bg-accent rounded-full h-2" style="width: 90%;"></div></div>
+                    </li>
+                    <li class="skills-item">
+                        <div class="title-wrapper flex justify-between mb-1"><h5 class="h5 font-medium">Angular</h5><data value="80">80%</data></div>
+                        <div class="skill-progress-bg bg-gray-200 rounded-full h-2"><div class="skill-progress-fill bg-accent rounded-full h-2" style="width: 80%;"></div></div>
+                    </li>
+                    <li class="skills-item">
+                        <div class="title-wrapper flex justify-between mb-1"><h5 class="h5 font-medium">NodeJS</h5><data value="75">75%</data></div>
+                        <div class="skill-progress-bg bg-gray-200 rounded-full h-2"><div class="skill-progress-fill bg-accent rounded-full h-2" style="width: 75%;"></div></div>
+                    </li>
+                    <li class="skills-item">
+                        <div class="title-wrapper flex justify-between mb-1"><h5 class="h5 font-medium">MySQL/SQL</h5><data value="85">85%</data></div>
+                        <div class="skill-progress-bg bg-gray-200 rounded-full h-2"><div class="skill-progress-fill bg-accent rounded-full h-2" style="width: 85%;"></div></div>
+                    </li>
+                     <li class="skills-item">
+                        <div class="title-wrapper flex justify-between mb-1"><h5 class="h5 font-medium">Power Platform</h5><data value="90">90%</data></div>
+                        <div class="skill-progress-bg bg-gray-200 rounded-full h-2"><div class="skill-progress-fill bg-accent rounded-full h-2" style="width: 90%;"></div></div>
+                    </li>
+                     <li class="skills-item">
+                        <div class="title-wrapper flex justify-between mb-1"><h5 class="h5 font-medium">NextJS</h5><data value="70">70%</data></div>
+                        <div class="skill-progress-bg bg-gray-200 rounded-full h-2"><div class="skill-progress-fill bg-accent rounded-full h-2" style="width: 70%;"></div></div>
+                    </li>
+                </ul>
+            </section>
+        </article>
 
-              </a>
-            </li>
+        <!-- Portfolio Page -->
+        <article class="portfolio hidden bg-white rounded-2xl p-6 shadow-sm" data-page="portfolio">
+          <header class="border-b border-gray-200 pb-4 mb-6">
+            <h2 class="h2 article-title text-3xl font-bold text-secondary">Portfolio</h2>
+          </header>
+          <section class="projects">
+            <ul class="filter-list flex flex-wrap gap-2 mb-6">
+              <li class="filter-item"><button class="active px-4 py-2 text-sm font-medium rounded-lg bg-accent text-white" data-filter-btn>All</button></li>
+              <li class="filter-item"><button class="px-4 py-2 text-sm font-medium rounded-lg bg-gray-100 hover:bg-accent hover:text-white transition-colors" data-filter-btn>Web Development</button></li>
+              <li class="filter-item"><button class="px-4 py-2 text-sm font-medium rounded-lg bg-gray-100 hover:bg-accent hover:text-white transition-colors" data-filter-btn>Mobile Applications</button></li>
             </ul>
+            <ul class="project-list grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+              <li class="project-item active" data-filter-item data-category="web development">
+                <a href="#" class="block group">
+                  <figure class="project-img relative rounded-xl overflow-hidden shadow-md transition-transform duration-300 group-hover:scale-105">
+                    <div class="project-item-icon-box absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center text-white text-4xl opacity-0 group-hover:opacity-100 transition-opacity">
+                      <ion-icon name="eye-outline"></ion-icon>
+                    </div>
+                    <img src="https://placehold.co/400x300/cccccc/212529?text=Web+Project" alt="Example Web Project" loading="lazy" class="w-full h-auto object-cover">
+                  </figure>
+                  <h3 class="project-title text-lg font-semibold mt-4">Example Web Project 1</h3>
+                  <p class="project-category text-sm text-gray-500">Web Development</p>
+                </a>
+              </li>
+              <li class="project-item active" data-filter-item data-category="mobile applications">
+                <a href="#" class="block group">
+                  <figure class="project-img relative rounded-xl overflow-hidden shadow-md transition-transform duration-300 group-hover:scale-105">
+                    <div class="project-item-icon-box absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center text-white text-4xl opacity-0 group-hover:opacity-100 transition-opacity">
+                      <ion-icon name="eye-outline"></ion-icon>
+                    </div>
+                    <img src="https://placehold.co/400x300/cccccc/212529?text=Mobile+App" alt="Example Mobile App" loading="lazy" class="w-full h-auto object-cover">
+                  </figure>
+                  <h3 class="project-title text-lg font-semibold mt-4">Example Mobile App 1</h3>
+                  <p class="project-category text-sm text-gray-500">Mobile Applications</p>
+                </a>
+              </li>
+            </ul>
+          </section>
+        </article>
 
-        </section>
+        <!-- Blog Page -->
+        <article class="blog hidden bg-white rounded-2xl p-6 shadow-sm" data-page="blog">
+          <header class="border-b border-gray-200 pb-4 mb-6">
+            <h2 class="h2 article-title text-3xl font-bold text-secondary">Blog</h2>
+          </header>
+          <section class="blog-posts">
+            <ul class="blog-posts-list grid md:grid-cols-2 gap-6">
+              <li class="blog-post-item group">
+                <a href="https://medium.com/@i_m_alfaizkhan/exploring-the-stripe-payment-gateway-in-flutter-e8524a0ade75" target="_blank" class="block bg-gray-50 rounded-xl overflow-hidden border border-gray-200 hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
+                  <figure class="blog-banner-box"><img src="https://placehold.co/600x400/cccccc/212529?text=Blog+Post" alt="Exploring Stripe in Flutter" loading="lazy" class="w-full h-48 object-cover"></figure>
+                  <div class="blog-content p-6">
+                    <div class="blog-meta flex items-center text-xs text-gray-500 mb-2">
+                      <p class="blog-category font-semibold text-accent">Flutter</p>
+                      <span class="dot mx-2">•</span>
+                      <time datetime="2022-07-27">Jul 27, 2022</time>
+                    </div>
+                    <h3 class="h3 blog-item-title text-lg font-bold group-hover:text-accent transition-colors">Exploring the Stripe Payment Gateway In Flutter</h3>
+                    <p class="blog-text text-sm text-gray-600 mt-2">A guide to Stripe payment gateway integration in a Flutter project.</p>
+                  </div>
+                </a>
+              </li>
+            </ul>
+          </section>
+        </article>
 
-      </article>
-
-
-      <article class="contact" data-page="contact">
-
-        <header>
-          <h2 class="h2 article-title">Contact</h2>
-        </header>
-
-        <section class="mapbox" data-mapbox>
-          <figure>
-            <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3506.634690835467!2d77.01186357488056!3d28.48781799015949!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d1f11a43a60a7%3A0xc367610e206b0266!2sU%20Block%2C%20DLF%20Phase%203%2C%20Sector%2024%2C%20Gurugram%2C%20Haryana!5e0!3m2!1sen!2sin!4v1719406087520!5m2!1sen!2sin"
-              width="400" height="300" loading="lazy" allowfullscreen></iframe>
-          </figure>
-        </section>
-
-        <section class="contact-form">
-
-          <h3 class="h3 form-title">Contact Form</h3>
-
-          <form action="#" class="form" data-form>
-
-            <div class="input-wrapper">
-              <input type="text" name="fullname" class="form-input" placeholder="Full name" required data-form-input>
-
-              <input type="email" name="email" class="form-input" placeholder="Email address" required data-form-input>
-            </div>
-
-            <textarea name="message" class="form-input" placeholder="Your Message" required data-form-input></textarea>
-
-            <button class="form-btn" type="submit">
-              <ion-icon name="paper-plane"></ion-icon>
-              <span>Send Message</span>
-            </button>
-
-          </form>
-
-        </section>
-
-      </article>
-
+        <!-- Contact Page -->
+        <article class="contact hidden bg-white rounded-2xl p-6 shadow-sm" data-page="contact">
+          <header class="border-b border-gray-200 pb-4 mb-6">
+            <h2 class="h2 article-title text-3xl font-bold text-secondary">Contact</h2>
+          </header>
+          <section class="mapbox mb-6 rounded-2xl overflow-hidden border border-gray-200">
+            <figure>
+              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3506.634690835467!2d77.01186357488056!3d28.48781799015949!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d1f11a43a60a7%3A0xc367610e206b0266!2sU%20Block%2C%20DLF%20Phase%203%2C%20Sector%2024%2C%20Gurugram%2C%20Haryana!5e0!3m2!1sen!2sin!4v1719406087520!5m2!1sen!2sin" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            </figure>
+          </section>
+          <section class="contact-form">
+            <h3 class="h3 form-title text-2xl font-bold mb-4">Contact Form</h3>
+            <form action="#" class="form space-y-4" data-form>
+              <div class="input-wrapper grid md:grid-cols-2 gap-4">
+                <input type="text" name="fullname" class="form-input w-full p-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-accent" placeholder="Full name" required data-form-input>
+                <input type="email" name="email" class="form-input w-full p-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-accent" placeholder="Email address" required data-form-input>
+              </div>
+              <textarea name="message" class="form-input w-full p-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-accent h-32" placeholder="Your Message" required data-form-input></textarea>
+              <button class="form-btn flex items-center justify-center gap-2 px-6 py-3 bg-accent text-white font-semibold rounded-lg hover:bg-accent-hover transition-colors" type="submit">
+                <ion-icon name="paper-plane"></ion-icon>
+                <span>Send Message</span>
+              </button>
+            </form>
+          </section>
+        </article>
+      </div>
     </div>
-
   </main>
 
-
-  <script src="./assets/js/script.js"></script>
-
+  <!-- IonIcons -->
   <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 
-</body>
+  <!-- Custom JavaScript for Interactivity -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+        // --- GSAP Animations ---
+        const tl = gsap.timeline();
 
+        // Initial load animation
+        tl.from('.sidebar', { x: -200, opacity: 0, duration: 0.8, ease: 'power3.out' })
+          .to('.sidebar', { opacity: 1 }, "-=0.5")
+          .from('.main-content', { y: 50, opacity: 0, duration: 0.8, ease: 'power3.out' }, '-=0.6')
+          .to('.main-content', { opacity: 1 }, "-=0.5");
+
+        // --- Sidebar Toggle for Mobile ---
+        const sidebar = document.querySelector('[data-sidebar]');
+        const sidebarBtn = document.querySelector('[data-sidebar-btn]');
+        const sidebarInfoMore = document.querySelector('.sidebar-info_more');
+
+        if (window.innerWidth < 1024) {
+            sidebarInfoMore.classList.add('hidden');
+        }
+
+        sidebarBtn.addEventListener('click', () => {
+            sidebarInfoMore.classList.toggle('hidden');
+            sidebar.classList.toggle('active');
+        });
+
+        // --- Page Navigation ---
+        const navLinks = document.querySelectorAll('[data-nav-link]');
+        const pages = document.querySelectorAll('[data-page]');
+        let currentPage = document.querySelector('article.active');
+
+        navLinks.forEach(link => {
+            link.addEventListener('click', function () {
+                const pageName = this.textContent.toLowerCase();
+                const nextPage = document.querySelector(`[data-page="${pageName}"]`);
+
+                if (currentPage === nextPage) return;
+
+                // Update active link
+                navLinks.forEach(l => l.classList.remove('active', 'text-accent'));
+                this.classList.add('active', 'text-accent');
+
+                // Animate out the current page
+                gsap.to(currentPage, {
+                    opacity: 0,
+                    y: 20,
+                    duration: 0.3,
+                    ease: 'power1.in',
+                    onComplete: () => {
+                        currentPage.classList.add('hidden');
+                        currentPage.classList.remove('active');
+
+                        // Animate in the next page
+                        nextPage.classList.remove('hidden');
+                        nextPage.classList.add('active');
+                        gsap.fromTo(nextPage,
+                            { opacity: 0, y: -20 },
+                            { opacity: 1, y: 0, duration: 0.4, ease: 'power1.out' }
+                        );
+                        currentPage = nextPage;
+                        window.scrollTo(0, 0);
+                    }
+                });
+            });
+        });
+
+        // --- Portfolio Filtering ---
+        const filterBtns = document.querySelectorAll('[data-filter-btn]');
+        const projectItems = document.querySelectorAll('[data-filter-item]');
+        const projectList = document.querySelector('.project-list');
+
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', function () {
+                const filterValue = this.textContent.toLowerCase();
+
+                filterBtns.forEach(b => b.classList.remove('active', 'bg-accent', 'text-white'));
+                this.classList.add('active', 'bg-accent', 'text-white');
+
+                // Animate out items
+                gsap.to(projectItems, {
+                    opacity: 0,
+                    scale: 0.9,
+                    duration: 0.3,
+                    stagger: 0.05,
+                    ease: 'power1.in',
+                    onComplete: () => {
+                        // Filter and show relevant items
+                        projectItems.forEach(item => {
+                            const itemCategory = item.dataset.category.toLowerCase();
+                            const shouldShow = filterValue === 'all' || itemCategory.includes(filterValue);
+                            item.style.display = shouldShow ? '' : 'none';
+                        });
+
+                        // Animate in filtered items
+                        gsap.to(projectItems, {
+                            opacity: 1,
+                            scale: 1,
+                            duration: 0.3,
+                            stagger: 0.05,
+                            ease: 'power1.out'
+                        });
+                    }
+                });
+            });
+        });
+    });
+  </script>
+
+</body>
 </html>
