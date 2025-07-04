@@ -10,6 +10,9 @@
   <!-- GSAP -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
 
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" xintegrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
   <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
 
@@ -71,7 +74,7 @@
       <div class="sidebar-info flex items-center justify-between lg:justify-center lg:flex-col lg:text-center">
         <div class="flex items-center gap-4 lg:flex-col">
           <figure class="avatar-box">
-            <img src="assets/images/my-avatar.webp" alt="Nikhil Pandey" width="80" class="rounded-full">
+            <img src="https://placehold.co/80x80/007BFF/F5F5F5?text=NP" alt="Nikhil Pandey" width="80" class="rounded-full">
           </figure>
           <div class="info-content">
             <h1 class="name text-2xl font-bold text-secondary" title="Nikhil Pandey">Nikhil Pandey</h1>
@@ -132,12 +135,12 @@
     <!-- Main Content -->
     <div class="main-content lg:w-3/4">
       <nav class="navbar bg-white rounded-2xl shadow-sm p-2 mb-6">
-        <ul class="navbar-list flex justify-around">
-          <li class="navbar-item"><button class="navbar-link active font-medium text-gray-600 hover:text-accent transition-colors px-4 py-2" data-nav-link>About</button></li>
-          <li class="navbar-item"><button class="navbar-link font-medium text-gray-600 hover:text-accent transition-colors px-4 py-2" data-nav-link>Resume</button></li>
-          <li class="navbar-item"><button class="navbar-link font-medium text-gray-600 hover:text-accent transition-colors px-4 py-2" data-nav-link>Portfolio</button></li>
-          <li class="navbar-item"><button class="navbar-link font-medium text-gray-600 hover:text-accent transition-colors px-4 py-2" data-nav-link>Blog</button></li>
-          <li class="navbar-item"><button class="navbar-link font-medium text-gray-600 hover:text-accent transition-colors px-4 py-2" data-nav-link>Contact</button></li>
+        <ul class="navbar-list flex flex-wrap justify-center gap-1 sm:justify-around">
+          <li class="navbar-item"><button class="navbar-link active font-medium text-gray-600 hover:text-accent transition-colors px-3 py-2 text-sm" data-nav-link>About</button></li>
+          <li class="navbar-item"><button class="navbar-link font-medium text-gray-600 hover:text-accent transition-colors px-3 py-2 text-sm" data-nav-link>Resume</button></li>
+          <li class="navbar-item"><button class="navbar-link font-medium text-gray-600 hover:text-accent transition-colors px-3 py-2 text-sm" data-nav-link>Portfolio</button></li>
+          <li class="navbar-item"><button class="navbar-link font-medium text-gray-600 hover:text-accent transition-colors px-3 py-2 text-sm" data-nav-link>Blog</button></li>
+          <li class="navbar-item"><button class="navbar-link font-medium text-gray-600 hover:text-accent transition-colors px-3 py-2 text-sm" data-nav-link>Contact</button></li>
         </ul>
       </nav>
 
@@ -178,28 +181,36 @@
             <h3 class="h3 service-title text-2xl font-bold text-secondary mb-6">What I'm Doing</h3>
             <ul class="service-list grid md:grid-cols-2 gap-6">
               <li class="service-item flex items-start gap-4 p-6 bg-gray-50 rounded-xl border border-gray-200 transition-transform duration-300 hover:scale-105">
-                <div class="service-icon-box"><img src="https://placehold.co/40x40/007BFF/FFFFFF?text=WEB" alt="web development icon" width="40" class="rounded-lg"></div>
+                <div class="service-icon-box flex items-center justify-center w-12 h-12 bg-accent text-white rounded-lg text-2xl flex-shrink-0">
+                  <i class="fa-solid fa-code"></i>
+                </div>
                 <div class="service-content-box">
                   <h4 class="h4 service-item-title text-lg font-semibold">Web Development</h4>
                   <p class="service-item-text text-gray-600 mt-1">Developing robust and scalable web applications using various technologies.</p>
                 </div>
               </li>
               <li class="service-item flex items-start gap-4 p-6 bg-gray-50 rounded-xl border border-gray-200 transition-transform duration-300 hover:scale-105">
-                <div class="service-icon-box"><img src="https://placehold.co/40x40/007BFF/FFFFFF?text=APP" alt="mobile app icon" width="40" class="rounded-lg"></div>
+                <div class="service-icon-box flex items-center justify-center w-12 h-12 bg-accent text-white rounded-lg text-2xl flex-shrink-0">
+                   <i class="fa-solid fa-mobile-screen-button"></i>
+                </div>
                 <div class="service-content-box">
                   <h4 class="h4 service-item-title text-lg font-semibold">Mobile App Development</h4>
                   <p class="service-item-text text-gray-600 mt-1">Professional development of applications for various mobile platforms.</p>
                 </div>
               </li>
               <li class="service-item flex items-start gap-4 p-6 bg-gray-50 rounded-xl border border-gray-200 transition-transform duration-300 hover:scale-105">
-                <div class="service-icon-box"><img src="https://placehold.co/40x40/007BFF/FFFFFF?text=API" alt="API development icon" width="40" class="rounded-lg"></div>
+                <div class="service-icon-box flex items-center justify-center w-12 h-12 bg-accent text-white rounded-lg text-2xl flex-shrink-0">
+                  <i class="fa-solid fa-gears"></i>
+                </div>
                 <div class="service-content-box">
                   <h4 class="h4 service-item-title text-lg font-semibold">API Development & Integration</h4>
                   <p class="service-item-text text-gray-600 mt-1">Building and integrating APIs for seamless data exchange.</p>
                 </div>
               </li>
               <li class="service-item flex items-start gap-4 p-6 bg-gray-50 rounded-xl border border-gray-200 transition-transform duration-300 hover:scale-105">
-                <div class="service-icon-box"><img src="https://placehold.co/40x40/007BFF/FFFFFF?text=SEO" alt="SEO & Digital Marketing icon" width="40" class="rounded-lg"></div>
+                <div class="service-icon-box flex items-center justify-center w-12 h-12 bg-accent text-white rounded-lg text-2xl flex-shrink-0">
+                  <i class="fa-solid fa-magnifying-glass-chart"></i>
+                </div>
                 <div class="service-content-box">
                   <h4 class="h4 service-item-title text-lg font-semibold">SEO & Digital Marketing</h4>
                   <p class="service-item-text text-gray-600 mt-1">Optimizing websites for search engines and running digital marketing campaigns.</p>
