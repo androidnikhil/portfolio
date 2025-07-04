@@ -1,0 +1,39 @@
+<!-- Portfolio Page -->
+<article class="portfolio hidden bg-white rounded-2xl p-6 shadow-sm" data-page="portfolio">
+  <header class="border-b border-gray-200 pb-4 mb-6">
+    <h2 class="h2 article-title text-3xl font-bold text-secondary">Portfolio</h2>
+  </header>
+  <section class="projects">
+    <ul class="filter-list flex flex-wrap gap-2 mb-6">
+      <li class="filter-item"><button class="active px-4 py-2 text-sm font-medium rounded-lg bg-accent text-white" data-filter-btn>All</button></li>
+      <li class="filter-item"><button class="px-4 py-2 text-sm font-medium rounded-lg bg-gray-100 hover:bg-accent hover:text-white transition-colors" data-filter-btn>Web Development</button></li>
+      <li class="filter-item"><button class="px-4 py-2 text-sm font-medium rounded-lg bg-gray-100 hover:bg-accent hover:text-white transition-colors" data-filter-btn>Mobile Applications</button></li>
+    </ul>
+    <ul class="project-list grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      <li class="project-item active" data-filter-item data-category="web development">
+        <a href="#" class="block group">
+          <figure class="project-img relative rounded-xl overflow-hidden shadow-md transition-transform duration-300 group-hover:scale-105">
+            <div class="project-item-icon-box absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center text-white text-4xl opacity-0 group-hover:opacity-100 transition-opacity">
+              <ion-icon name="eye-outline"></ion-icon>
+            </div>
+            <img src="https://placehold.co/400x300/cccccc/212529?text=Web+Project" alt="Example Web Project" loading="lazy" class="w-full h-auto object-cover">
+          </figure>
+          <h3 class="project-title text-lg font-semibold mt-4">Example Web Project 1</h3>
+          <p class="project-category text-sm text-gray-500">Web Development</p>
+        </a>
+      </li>
+      <li class="project-item active" data-filter-item data-category="mobile applications">
+        <a href="#" class="block group">
+          <figure class="project-img relative rounded-xl overflow-hidden shadow-md transition-transform duration-300 group-hover:scale-105">
+            <div class="project-item-icon-box absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center text-white text-4xl opacity-0 group-hover:opacity-100 transition-opacity">
+              <ion-icon name="eye-outline"></ion-icon>
+            </div>
+            <img src="https://placehold.co/400x300/cccccc/212529?text=Mobile+App" alt="Example Mobile App" loading="lazy" class="w-full h-auto object-cover">
+          </figure>
+          <h3 class="project-title text-lg font-semibold mt-4">Example Mobile App 1</h3>
+          <p class="project-category text-sm text-gray-500">Mobile Applications</p>
+        </a>
+      </li>
+    </ul>
+  </section>
+</article>

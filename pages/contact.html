@@ -1,0 +1,25 @@
+<!-- Contact Page -->
+<article class="contact hidden bg-white rounded-2xl p-6 shadow-sm" data-page="contact">
+  <header class="border-b border-gray-200 pb-4 mb-6">
+    <h2 class="h2 article-title text-3xl font-bold text-secondary">Contact</h2>
+  </header>
+  <section class="mapbox mb-6 rounded-2xl overflow-hidden border border-gray-200">
+    <figure>
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3506.634690835467!2d77.01186357488056!3d28.48781799015949!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d1f11a43a60a7%3A0xc367610e206b0266!2sU%20Block%2C%20DLF%20Phase%203%2C%20Sector%2024%2C%20Gurugram%2C%20Haryana!5e0!3m2!1sen!2sin!4v1719406087520!5m2!1sen!2sin" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+    </figure>
+  </section>
+  <section class="contact-form">
+    <h3 class="h3 form-title text-2xl font-bold mb-4">Contact Form</h3>
+    <form action="#" class="form space-y-4" data-form>
+      <div class="input-wrapper grid md:grid-cols-2 gap-4">
+        <input type="text" name="fullname" class="form-input w-full p-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-accent" placeholder="Full name" required data-form-input>
+        <input type="email" name="email" class="form-input w-full p-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-accent" placeholder="Email address" required data-form-input>
+      </div>
+      <textarea name="message" class="form-input w-full p-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-accent h-32" placeholder="Your Message" required data-form-input></textarea>
+      <button class="form-btn flex items-center justify-center gap-2 px-6 py-3 bg-accent text-white font-semibold rounded-lg hover:bg-accent-hover transition-colors" type="submit">
+        <ion-icon name="paper-plane"></ion-icon>
+        <span>Send Message</span>
+      </button>
+    </form>
+  </section>
+</article>
