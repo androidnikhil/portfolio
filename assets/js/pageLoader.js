@@ -122,6 +122,17 @@ class PageLoader {
         if (pageName === 'contact') {
             this.initContactForm();
         }
+
+        // Blog page handling
+        if (pageName === 'blog') {
+            this.initBlogLinks();
+        }
+
+        // Blog detail page handling
+        if (pageName.startsWith('blog-')) {
+            this.initBlogDetail();
+            this.initAccordion();
+        }
     }
 
     initPortfolioFiltering() {
@@ -173,6 +184,68 @@ class PageLoader {
                 alert('Form submitted! (This is a demo)');
             });
         }
+    }
+
+    initBlogLinks() {
+        const blogLinks = document.querySelectorAll('[data-blog-link]');
+        blogLinks.forEach(link => {
+            link.addEventListener('click', async (e) => {
+                e.preventDefault();
+                const pageName = link.dataset.blogLink;
+                await this.loadPage(pageName);
+                this.animatePageTransition(pageName);
+                window.scrollTo(0, 0);
+            });
+        });
+    }
+
+    initBlogDetail() {
+        const backBtn = document.querySelector('[data-back-to-blog]');
+        if (backBtn) {
+            backBtn.addEventListener('click', async (e) => {
+                e.preventDefault();
+                await this.loadPage('blog');
+                this.animatePageTransition('blog');
+                window.scrollTo(0, 0);
+            });
+        }
+    }
+
+    initAccordion() {
+        const accordionBtns = document.querySelectorAll('[data-accordion-btn]');
+        
+        accordionBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                const content = btn.nextElementSibling;
+                const icon = btn.querySelector('ion-icon');
+                
+                // Check if currently open
+                const isOpen = !content.classList.contains('hidden');
+                
+                if (isOpen) {
+                    // Close
+                    gsap.to(content, {
+                        height: 0,
+                        opacity: 0,
+                        duration: 0.3,
+                        ease: 'power2.in',
+                        onComplete: () => {
+                            content.classList.add('hidden');
+                            content.style.height = ''; // Reset height
+                        }
+                    });
+                    gsap.to(icon, { rotation: 0, duration: 0.3 });
+                } else {
+                    // Open
+                    content.classList.remove('hidden');
+                    gsap.fromTo(content, 
+                        { height: 0, opacity: 0 },
+                        { height: 'auto', opacity: 1, duration: 0.3, ease: 'power2.out' }
+                    );
+                    gsap.to(icon, { rotation: 180, duration: 0.3 });
+                }
+            });
+        });
     }
 }
 
