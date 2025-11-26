@@ -1,0 +1,79 @@
+[
+  {
+    "title": "Libbysvegetables",
+    "category": "Web Applications",
+    "image": "assets/images/libbysvegetables.png",
+    "link": "https://www.libbysvegetables.com/",
+    "techStack": "Wordpress, Node.js, MySQL, SEO"
+  },
+  {
+    "title": "Kikkomanusa",
+    "category": "Web Applications",
+    "image": "assets/images/kikkomanusa.png",
+    "link": "https://kikkomanusa.com/",
+    "techStack": "Wordpress, Node.js, MySQL, SEO"
+  },
+  {
+    "title": "Ketchum",
+    "category": "Web Applications",
+    "image": "assets/images/ketchum.png",
+    "link": "https://www.ketchum.com",
+    "techStack": "MS SQL, CSS, JS, NodeJS, SharePoint, PHP, Drupal"
+  },
+  {
+    "title": "Eoovbook",
+    "category": "Web Applications",
+    "image": "assets/images/eoovbook.png",
+    "link": "https://www.eoovbook.com",
+    "techStack": "AngularJS, Firebase, Dotnet, MS SQL, NodeJS"
+  },
+  {
+    "title": "Handwritten Wines",
+    "category": "Web Applications",
+    "image": "assets/images/handwritten_wines.png",
+    "link": "https://www.handwrittenwines.com",
+    "techStack": "PHP, JavaScript, Ajax, jQuery"
+  },
+  {
+    "title": "Bloomerang",
+    "category": "Web Applications",
+    "image": "assets/images/bloomerang.png",
+    "link": "https://www.bloomerang.wpengine.com",
+    "techStack": "PHP, CSS, JavaScript, Ajax, jQuery"
+  },
+  {
+    "title": "WordPress Maintenance",
+    "category": "Web Applications",
+    "image": "assets/images/wordpress_maintenance.png",
+    "link": "#",
+    "techStack": "WordPress, WooCommerce API, Audio Eye"
+  },
+  {
+    "title": "Autotisement",
+    "category": "Web Applications",
+    "image": "assets/images/autotisement.png",
+    "link": "https://autotisement.in/",
+    "techStack": "React Js, Next Js, Node Js, MongoDB, AWS"
+  },
+  {
+    "title": "Intgrow",
+    "category": "Web Applications",
+    "image": "assets/images/intgrow.png",
+    "link": "https://beta.intgrow.co/",
+    "techStack": "React Js, Next Js, Node Js, MySQL, VPS"
+  },
+  {
+    "title": "Creditpedia",
+    "category": "Mobile Applications",
+    "image": "assets/images/creditpedia.png",
+    "link": "https://play.google.com/store/apps/details?id=com.creditpedia.technofino",
+    "techStack": "Flutter, Node Js, MongoDB, Digital Ocean"
+  },
+  {
+    "title": "Dr. La Bike",
+    "category": "Mobile Applications",
+    "image": "assets/images/drlabike.png",
+    "link": "https://drlabike.com/",
+    "techStack": "React Native, Node.js, MySQL, AWS"
+  }
+]

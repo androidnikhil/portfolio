@@ -115,7 +115,7 @@ class PageLoader {
     initializePageFeatures(pageName) {
         // Portfolio page filtering
         if (pageName === 'portfolio') {
-            this.initPortfolioFiltering();
+            this.loadProjects();
         }
         
         // Contact form handling
@@ -246,6 +246,43 @@ class PageLoader {
                 }
             });
         });
+    }
+
+    async loadProjects() {
+        try {
+            const response = await fetch('assets/data/projects.json');
+            if (!response.ok) {
+                throw new Error('Failed to load projects data');
+            }
+            const projects = await response.json();
+            this.renderProjects(projects);
+        } catch (error) {
+            console.error('Error loading projects:', error);
+        }
+    }
+
+    renderProjects(projects) {
+        const projectList = document.querySelector('.project-list');
+        if (!projectList) return;
+
+        projectList.innerHTML = projects.map(project => `
+            <li class="project-item active" data-filter-item data-category="${project.category.toLowerCase()}">
+                <a href="${project.link}" target="_blank" class="block group">
+                    <figure class="project-img relative rounded-xl overflow-hidden shadow-md transition-transform duration-300 group-hover:scale-105">
+                        <div class="project-item-icon-box absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center text-white text-4xl opacity-0 group-hover:opacity-100 transition-opacity">
+                            <ion-icon name="eye-outline"></ion-icon>
+                        </div>
+                        <img src="${project.image}" alt="${project.title}" loading="lazy" class="w-full h-auto object-cover">
+                    </figure>
+                    <h3 class="project-title text-lg font-semibold mt-4">${project.title}</h3>
+                    <p class="project-category text-sm text-gray-500">${project.category}</p>
+                    <p class="text-xs text-gray-400 mt-1">${project.techStack}</p>
+                </a>
+            </li>
+        `).join('');
+
+        // Re-initialize filtering after rendering
+        this.initPortfolioFiltering();
     }
 }
 
