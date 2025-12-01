@@ -10,8 +10,22 @@
   <!-- GSAP -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
 
+  <!-- EmailJS SDK -->
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+  <script type="text/javascript">
+    (function () {
+      // https://dashboard.emailjs.com/admin/account
+      emailjs.init('34baoB8vqkqVshSKB');
+    })();
+  </script>
+
+  <!-- Google reCAPTCHA -->
+  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+
   <!-- Font Awesome -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" xintegrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    xintegrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
 
   <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -46,20 +60,25 @@
       width: 8px;
       height: 8px;
     }
+
     .has-scrollbar::-webkit-scrollbar-thumb {
       background-color: #cbd5e1;
       border-radius: 10px;
     }
+
     .has-scrollbar::-webkit-scrollbar-thumb:hover {
       background-color: #a0aec0;
     }
+
     /* Style for active nav link */
     .navbar-link.active {
-        color: #007BFF;
+      color: #007BFF;
     }
+
     /* Prepare elements for animation */
-    .sidebar, .main-content {
-        opacity: 0;
+    .sidebar,
+    .main-content {
+      opacity: 0;
     }
   </style>
 
@@ -70,7 +89,9 @@
   <main class="flex flex-col md:flex-row gap-6 p-4 lg:p-6 max-w-7xl mx-auto">
 
     <!-- Sidebar -->
-    <aside class="sidebar w-full md:w-1/3 lg:w-1/4 bg-white rounded-2xl p-6 shadow-lg transition-all duration-300 ease-in-out md:sticky md:top-6 h-fit" data-sidebar>
+    <aside
+      class="sidebar w-full md:w-1/3 lg:w-1/4 bg-white rounded-2xl p-6 shadow-lg transition-all duration-300 ease-in-out md:sticky md:top-6 h-fit"
+      data-sidebar>
       <div class="sidebar-info flex items-center justify-between md:justify-center md:flex-col md:text-center">
         <div class="flex items-center gap-4 md:flex-col">
           <figure class="avatar-box">
@@ -78,7 +99,8 @@
           </figure>
           <div class="info-content">
             <h1 class="name text-2xl font-bold text-secondary" title="Nikhil Pandey">Nikhil Pandey</h1>
-            <p class="title bg-gray-100 text-gray-600 px-3 py-1 rounded-md text-sm font-medium mt-1 inline-block">Senior Fullstack Developer</p>
+            <p class="title bg-gray-100 text-gray-600 px-3 py-1 rounded-md text-sm font-medium mt-1 inline-block">Senior
+              Fullstack Developer</p>
           </div>
         </div>
         <button class="info_more-btn md:hidden p-2 rounded-md bg-gray-100 hover:bg-gray-200" data-sidebar-btn>
@@ -92,14 +114,16 @@
             <div class="icon-box text-accent text-2xl"><ion-icon name="mail-outline"></ion-icon></div>
             <div class="contact-info min-w-0">
               <p class="contact-title text-xs text-gray-500">Email</p>
-              <a href="mailto:nikhilpandey00999@gmail.com" class="contact-link text-sm hover:text-accent transition-colors break-all">nikhilpandey00999@gmail.com</a>
+              <a href="mailto:nikhilpandey00999@gmail.com"
+                class="contact-link text-sm hover:text-accent transition-colors break-all">nikhilpandey00999@gmail.com</a>
             </div>
           </li>
           <li class="contact-item flex items-center gap-4">
             <div class="icon-box text-accent text-2xl"><ion-icon name="phone-portrait-outline"></ion-icon></div>
             <div class="contact-info">
               <p class="contact-title text-xs text-gray-500">Phone</p>
-              <a href="tel:+918954690093" class="contact-link text-sm hover:text-accent transition-colors">+91 8954690093</a>
+              <a href="tel:+918954690093" class="contact-link text-sm hover:text-accent transition-colors">+91
+                8954690093</a>
             </div>
           </li>
           <li class="contact-item flex items-center gap-4">
@@ -120,13 +144,19 @@
         <div class="mt-4 pt-4 border-t border-gray-200"></div>
         <ul class="social-list flex items-center justify-center gap-4 mt-4">
           <li class="social-item">
-            <a href="https://github.com/androidnikhil" target="_blank" class="social-link text-2xl text-gray-500 hover:text-accent transition-colors"><ion-icon name="logo-github"></ion-icon></a>
+            <a href="https://github.com/androidnikhil" target="_blank"
+              class="social-link text-2xl text-gray-500 hover:text-accent transition-colors"><ion-icon
+                name="logo-github"></ion-icon></a>
           </li>
           <li class="social-item">
-            <a href="https://www.linkedin.com/in/nikhil-pandey-9a0278a1/" target="_blank" class="social-link text-2xl text-gray-500 hover:text-accent transition-colors"><ion-icon name="logo-linkedin"></ion-icon></a>
+            <a href="https://www.linkedin.com/in/nikhil-pandey-9a0278a1/" target="_blank"
+              class="social-link text-2xl text-gray-500 hover:text-accent transition-colors"><ion-icon
+                name="logo-linkedin"></ion-icon></a>
           </li>
           <li class="social-item">
-            <a href="https://www.instagram.com/nikhil00999/" target="_blank" class="social-link text-2xl text-gray-500 hover:text-accent transition-colors"><ion-icon name="logo-instagram"></ion-icon></a>
+            <a href="https://www.instagram.com/nikhil00999/" target="_blank"
+              class="social-link text-2xl text-gray-500 hover:text-accent transition-colors"><ion-icon
+                name="logo-instagram"></ion-icon></a>
           </li>
         </ul>
       </div>
@@ -136,11 +166,21 @@
     <div class="main-content w-full md:w-2/3 lg:w-3/4">
       <nav class="navbar bg-white rounded-2xl shadow-sm p-2 mb-6">
         <ul class="navbar-list flex flex-wrap justify-center gap-1 sm:justify-around">
-          <li class="navbar-item"><button class="navbar-link active font-medium text-gray-600 hover:text-accent transition-colors px-3 py-2 text-sm" data-nav-link>About</button></li>
-          <li class="navbar-item"><button class="navbar-link font-medium text-gray-600 hover:text-accent transition-colors px-3 py-2 text-sm" data-nav-link>Resume</button></li>
-          <li class="navbar-item"><button class="navbar-link font-medium text-gray-600 hover:text-accent transition-colors px-3 py-2 text-sm" data-nav-link>Portfolio</button></li>
-          <li class="navbar-item"><button class="navbar-link font-medium text-gray-600 hover:text-accent transition-colors px-3 py-2 text-sm" data-nav-link>Blog</button></li>
-          <li class="navbar-item"><button class="navbar-link font-medium text-gray-600 hover:text-accent transition-colors px-3 py-2 text-sm" data-nav-link>Contact</button></li>
+          <li class="navbar-item"><button
+              class="navbar-link active font-medium text-gray-600 hover:text-accent transition-colors px-3 py-2 text-sm"
+              data-nav-link>About</button></li>
+          <li class="navbar-item"><button
+              class="navbar-link font-medium text-gray-600 hover:text-accent transition-colors px-3 py-2 text-sm"
+              data-nav-link>Resume</button></li>
+          <li class="navbar-item"><button
+              class="navbar-link font-medium text-gray-600 hover:text-accent transition-colors px-3 py-2 text-sm"
+              data-nav-link>Portfolio</button></li>
+          <li class="navbar-item"><button
+              class="navbar-link font-medium text-gray-600 hover:text-accent transition-colors px-3 py-2 text-sm"
+              data-nav-link>Blog</button></li>
+          <li class="navbar-item"><button
+              class="navbar-link font-medium text-gray-600 hover:text-accent transition-colors px-3 py-2 text-sm"
+              data-nav-link>Contact</button></li>
         </ul>
       </nav>
 
@@ -156,46 +196,49 @@
 
   <!-- Page Loader Script -->
   <script src="assets/js/pageLoader.js"></script>
-  
+
   <!-- Main Script -->
   <script src="assets/js/script.js"></script>
 
   <!-- Custom JavaScript for Interactivity -->
   <script>
     document.addEventListener('DOMContentLoaded', function () {
-        // --- GSAP Animations ---
-        const tl = gsap.timeline();
+      // --- GSAP Animations ---
+      const tl = gsap.timeline();
 
-        // Initial load animation
-        tl.from('.sidebar', { x: -200, opacity: 0, duration: 0.8, ease: 'power3.out' })
-          .to('.sidebar', { opacity: 1 }, "-=0.5")
-          .from('.main-content', { y: 50, opacity: 0, duration: 0.8, ease: 'power3.out' }, '-=0.6')
-          .to('.main-content', { opacity: 1 }, "-=0.5");
+      // Initial load animation
+      tl.from('.sidebar', { x: -200, opacity: 0, duration: 0.8, ease: 'power3.out' })
+        .to('.sidebar', { opacity: 1 }, "-=0.5")
+        .from('.main-content', { y: 50, opacity: 0, duration: 0.8, ease: 'power3.out' }, '-=0.6')
+        .to('.main-content', { opacity: 1 }, "-=0.5");
 
-        // --- Sidebar Toggle for Mobile ---
-        const sidebar = document.querySelector('[data-sidebar]');
-        const sidebarBtn = document.querySelector('[data-sidebar-btn]');
-        const sidebarInfoMore = document.querySelector('.sidebar-info_more');
+      // --- Sidebar Toggle for Mobile ---
+      const sidebar = document.querySelector('[data-sidebar]');
+      const sidebarBtn = document.querySelector('[data-sidebar-btn]');
+      const sidebarInfoMore = document.querySelector('.sidebar-info_more');
 
-        // Hide contact info by default on mobile, show on desktop
-        if (window.innerWidth < 768) { // Changed from 1024 to 768 (md breakpoint)
-            sidebarInfoMore.classList.add('hidden');
-        }
+      // Hide contact info by default on mobile, show on desktop
+      if (window.innerWidth < 768) { // Changed from 1024 to 768 (md breakpoint)
+        sidebarInfoMore.classList.add('hidden');
+      }
 
-        sidebarBtn.addEventListener('click', () => {
-            // Animate the opening/closing of the contact info
-            if (sidebarInfoMore.classList.contains('hidden')) {
-                sidebarInfoMore.classList.remove('hidden');
-                gsap.fromTo(sidebarInfoMore, { height: 0, opacity: 0 }, { height: 'auto', opacity: 1, duration: 0.4, ease: 'power2.out' });
-            } else {
-                gsap.to(sidebarInfoMore, { height: 0, opacity: 0, duration: 0.4, ease: 'power2.in', onComplete: () => {
-                    sidebarInfoMore.classList.add('hidden');
-                }});
+      sidebarBtn.addEventListener('click', () => {
+        // Animate the opening/closing of the contact info
+        if (sidebarInfoMore.classList.contains('hidden')) {
+          sidebarInfoMore.classList.remove('hidden');
+          gsap.fromTo(sidebarInfoMore, { height: 0, opacity: 0 }, { height: 'auto', opacity: 1, duration: 0.4, ease: 'power2.out' });
+        } else {
+          gsap.to(sidebarInfoMore, {
+            height: 0, opacity: 0, duration: 0.4, ease: 'power2.in', onComplete: () => {
+              sidebarInfoMore.classList.add('hidden');
             }
-            sidebar.classList.toggle('active');
-        });
+          });
+        }
+        sidebar.classList.toggle('active');
+      });
     });
   </script>
 
 </body>
+
 </html>

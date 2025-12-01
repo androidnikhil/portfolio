@@ -177,11 +177,54 @@ class PageLoader {
 
     initContactForm() {
         const form = document.querySelector('[data-form]');
+        const formBtn = document.querySelector('[type="submit"]');
+
         if (form) {
             form.addEventListener('submit', (e) => {
                 e.preventDefault();
-                // Add your form submission logic here
-                alert('Form submitted! (This is a demo)');
+                
+                // Check reCAPTCHA
+                const recaptchaResponse = grecaptcha.getResponse();
+                if (!recaptchaResponse) {
+                    alert('Please complete the CAPTCHA verification.');
+                    return;
+                }
+
+                // Show loading state
+                const originalBtnText = formBtn.innerHTML;
+                formBtn.innerHTML = '<span>Sending...</span>';
+                formBtn.disabled = true;
+
+                // Replace these with your actual Service ID and Template ID
+                const serviceID = 'service_8li7jzn';
+                const templateID = 'template_69yq1ef';
+                
+                // Add the reCAPTCHA response to the form data if needed by EmailJS template
+                // or just rely on the fact that we checked it client-side.
+                // Note: For true security, verify the token on the server side via EmailJS or a backend.
+                // EmailJS allows enabling CAPTCHA verification in their dashboard which checks this token.
+
+                emailjs.sendForm(serviceID, templateID, form)
+                    .then(() => {
+                        formBtn.innerHTML = '<span>Message Sent!</span>';
+                        alert('Message sent successfully!');
+                        form.reset();
+                        grecaptcha.reset(); // Reset CAPTCHA
+                        
+                        setTimeout(() => {
+                            formBtn.innerHTML = originalBtnText;
+                            formBtn.disabled = false;
+                        }, 3000);
+                    }, (err) => {
+                        formBtn.innerHTML = '<span>Failed!</span>';
+                        alert(JSON.stringify(err));
+                        console.error('EmailJS Error:', err);
+                        
+                        setTimeout(() => {
+                            formBtn.innerHTML = originalBtnText;
+                            formBtn.disabled = false;
+                        }, 3000);
+                    });
             });
         }
     }

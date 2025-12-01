@@ -1,0 +1,306 @@
+
+    <style>
+        
+        .sustainable {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2rem;
+        }
+
+        .sustainable-logo-contain {
+            width: 25%;
+        }
+
+        .sustainable-logo {
+            width: 100%;
+        }
+
+        .sustainable-content {
+            width: 75%;
+            padding-left: 2rem;
+        }
+
+        .aci-logo-contain {
+            display: flex;
+            justify-content: flex-end;
+            margin-bottom: 1rem;
+        }
+
+        .aci-logo {
+            height: 8rem;
+        }
+
+        .main-title {
+            font-size: 60px;
+            font-weight: 700;
+            color: #00529b;
+            margin-top: -10px;
+            line-height: 72px;
+            text-transform: capitalize;
+            margin-bottom: 16px;
+        }
+
+        .main-title .highlight {
+            color: #c42a56;
+        }
+
+        .subtitle {
+            font-size: 24px;
+            line-height: 30px !important;
+            color: #00529b;
+            margin-top: 0.5rem;
+        }
+
+        .main-grid {
+            display: grid;
+            grid-template-columns: repeat(1, minmax(0, 1fr));
+            gap: 2rem;
+        }
+
+        .grid-span-full {
+            grid-column: span 1 / span 1;
+            margin-top: 20px;
+        }
+
+        .inner-grid {
+            display: grid;
+            grid-template-columns: repeat(1, minmax(0, 1fr));
+            gap: 2rem;
+            text-align: center;
+        }
+
+        .grid-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .grid-item-image-contain {
+            position: relative;
+        }
+
+        .grid-item-image {
+            width: 100%;
+            height: 100%;
+        }
+
+        .grid-item-text {
+            color: #374151;
+            margin-top: 0.5rem;
+        }
+
+        .grid-section-2 {
+            margin-top: 2rem;
+        }
+
+        .grid-section-2 .inner-grid {
+            align-items: flex-start;
+        }
+
+        .blue-box {
+            background-color: #004a99;
+            position: relative;
+            color: white;
+            padding: 1.5rem;
+            border-radius: 0.5rem;
+        }
+
+        .blue-box::before {
+            content: "";
+            position: absolute;
+            left: -46px;
+            top: 160px;
+            width: 60px;
+            height: 80px;
+            background: #004a99;
+            clip-path: polygon(0 65%, 79% 0, 77% 39%);
+            border-top-left-radius: 50% 50%;
+            border-bottom-left-radius: 50% 50%;
+        }
+
+        .fun-fact-sustainable {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: transparent !important;
+        }
+
+        .fun-fact-title {
+            font-size: 3rem;
+            color: #ffffff;
+            font-weight: 700;
+            margin: 0;
+        }
+
+        .fun-fact-icon {
+            width: 3rem;
+            height: 3rem;
+        }
+
+        .blue-box hr {
+            border-color: rgba(255, 255, 255, 0.2);
+        }
+
+        .blue-box .text-sm {
+            font-size: 0.875rem;
+            margin-top: 1rem;
+        }
+
+        .blue-box .text-xs {
+            font-size: 0.75rem;
+        }
+
+        .blue-box .mt-4 {
+            margin-top: 1rem;
+        }
+
+        .blue-box .mt-2 {
+            margin-top: 0.5rem;
+        }
+
+
+
+        @media (min-width: 640px) {
+            .inner-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+
+            .blue-box-contain {
+                grid-column: span 2 / span 2;
+            }
+        }
+
+        @media (min-width: 768px) {
+            .main-grid {
+                grid-template-columns: repeat(3, minmax(0, 1fr));
+            }
+
+            .grid-span-full {
+                grid-column: span 3 / span 3;
+            }
+
+            .inner-grid {
+                grid-template-columns: repeat(3, minmax(0, 1fr));
+            }
+
+            .blue-box-contain {
+                grid-column: span 1 / span 1;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .subtitle {
+                font-size: 16px !important;
+            }
+
+            .main-title {
+                font-size: 26px !important;
+            }
+            .sustainable-logo {
+                width: 100px;
+                height: 130px;
+            }
+        }
+
+        .bottom-box {
+            background-color: #004a99;
+            padding: 2rem;
+            margin-top: 2rem;
+        }
+        .sustainable-background {
+            background: url(https://ketchumfiledev.wpenginepowered.com/wp-content/uploads/2025/09/background.png);
+        }
+    </style>
+
+
+<div class="sustainable-background">
+    <div class="contain">
+        <div class="sustainable">
+            <div class="sustainable-logo-contain">
+                <img alt="Detergent pods" class="sustainable-logo"
+                    src="https://ketchumfiledev.wpenginepowered.com/wp-content/uploads/2025/09/datergent.png" />
+            </div>
+            <div class="sustainable-content">
+                <div class="aci-logo-contain">
+                    <img alt="ACI Logo" class="aci-logo"
+                        src="https://ketchumfiledev.wpenginepowered.com/wp-content/uploads/2025/09/aa_logo.png" />
+                </div>
+                <h1 class="main-title">The <span class="highlight">Sustainable Science</span>
+                    Behind Detergent Pods</h1>
+                <p class="subtitle">Five ways laundry and dish pods are thoughtfully designed to be
+                    more resource-efficient</p>
+            </div>
+        </div>
+        <div class="main-grid">
+            <div class="grid-span-full">
+                <div class="inner-grid">
+                    <div class="grid-item">
+                        <div class="grid-item-image-contain">
+                            <img alt="Water drop and CO2 icon" class="grid-item-image"
+                                src="https://ketchumfiledev.wpenginepowered.com/wp-content/uploads/2025/09/co2.png"
+                                style="height: 190px;" />
+                        </div>
+                        <p class="grid-item-text">Concentrated, low-water formula requires less packaging and is
+                            lighter to ship, minimizing transport emissions</p>
+                    </div>
+                    <div class="grid-item">
+                        <div class="grid-item-image-contain">
+                            <img alt="Detergent pod icon" class="grid-item-image"
+                                src="https://ketchumfiledev.wpenginepowered.com/wp-content/uploads/2025/09/02.png"
+                                style="height: 190px;" />
+                        </div>
+                        <p class="grid-item-text">Multi-chamber form enables enhanced cleaning power; skip pre-rinse
+                            and pre-treat</p>
+                    </div>
+                    <div class="grid-item">
+                        <div class="grid-item-image-contain">
+                            <img alt="Waste and cost icon" class="grid-item-image"
+                                src="https://ketchumfiledev.wpenginepowered.com/wp-content/uploads/2025/09/03.png"
+                                style="height: 190px;" />
+                        </div>
+                        <p class="grid-item-text">Perfectly pre-dosed to avoid unnecessary product waste</p>
+                    </div>
+                </div>
+            </div>
+            <div class="grid-span-full grid-section-2">
+                <div class="inner-grid">
+                    <div class="grid-item">
+                        <div class="grid-item-image-contain">
+                            <img alt="Cold water snowflake icon" class="grid-item-image"
+                                src="https://ketchumfiledev.wpenginepowered.com/wp-content/uploads/2025/09/04.png" />
+                        </div>
+                        <p class="grid-item-text">Laundry pods designed to work in cold water, reducing 90% energy
+                            in every wash</p>
+                    </div>
+                    <div class="grid-item">
+                        <div class="grid-item-image-contain">
+                            <img alt="Biodegradable film icon" class="grid-item-image"
+                                src="https://ketchumfiledev.wpenginepowered.com/wp-content/uploads/2025/09/05.png" />
+                        </div>
+                        <p class="grid-item-text">Designed using a dissolvable, biodegradable PVA film</p>
+                    </div>
+                    <div class="blue-box blue-box-contain">
+                        <div class="fun-fact-sustainable">
+                            <h3 class="fun-fact-title">Fun fact</h3>
+                            <img src="https://ketchumfiledev.wpenginepowered.com/wp-content/uploads/2025/09/setting_icon.png"
+                                alt="Fun Fact Icon" class="fun-fact-icon">
+                        </div>
+                        <hr>
+                        <p class="text-sm mt-4" style="text-align: left;color: #ffffff;font-size: 16px;margin: 0px;">Stringent scientific studies show that PVA is
+                            fully biodegraded in 90
+                            days or less in a variety of conditions, including wastewater treatment plants<sup>1</sup>
+                            and river water<sup>2</sup>.</p>
+                        <p class="text-xs mt-4" style="text-align: left;color: #ffffff;">1 Application of standardized methods to
+                            evaluate the environmental safety of polyvinyl alcohol disposed of down the drain, Integr
+                            Environ Assess Manag (2024)</p>
+                        <p class="text-xs mt-2" style="text-align: left;color: #ffffff;">2 Water soluble polymer biodegradation
+                            evaluation using standard and experimental methods, Sci Total Environ. (2023)</p>
+                    </div>
+                </div>
+                <div class="bottom-box"></div>
+            </div>
+        </div>
+    </div>
+
+</div>
