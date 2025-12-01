@@ -183,10 +183,11 @@ class PageLoader {
             form.addEventListener('submit', (e) => {
                 e.preventDefault();
                 
-                // Check reCAPTCHA
-                const recaptchaResponse = grecaptcha.getResponse();
-                if (!recaptchaResponse) {
-                    alert('Please complete the CAPTCHA verification.');
+                // Check Honeypot
+                const honeypot = form.querySelector('[name="_gotcha"]');
+                if (honeypot && honeypot.value) {
+                    // If honeypot is filled, it's a bot. Silently fail or show generic error.
+                    console.log('Bot detected via honeypot.');
                     return;
                 }
 
@@ -198,18 +199,12 @@ class PageLoader {
                 // Replace these with your actual Service ID and Template ID
                 const serviceID = 'service_8li7jzn';
                 const templateID = 'template_69yq1ef';
-                
-                // Add the reCAPTCHA response to the form data if needed by EmailJS template
-                // or just rely on the fact that we checked it client-side.
-                // Note: For true security, verify the token on the server side via EmailJS or a backend.
-                // EmailJS allows enabling CAPTCHA verification in their dashboard which checks this token.
 
                 emailjs.sendForm(serviceID, templateID, form)
                     .then(() => {
                         formBtn.innerHTML = '<span>Message Sent!</span>';
                         alert('Message sent successfully!');
                         form.reset();
-                        grecaptcha.reset(); // Reset CAPTCHA
                         
                         setTimeout(() => {
                             formBtn.innerHTML = originalBtnText;
