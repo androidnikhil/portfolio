@@ -203,7 +203,7 @@ class PageLoader {
                 emailjs.sendForm(serviceID, templateID, form)
                     .then(() => {
                         formBtn.innerHTML = '<span>Message Sent!</span>';
-                        alert('Message sent successfully!');
+                        this.showToast('Message sent successfully!', 'success');
                         form.reset();
                         
                         setTimeout(() => {
@@ -212,7 +212,7 @@ class PageLoader {
                         }, 3000);
                     }, (err) => {
                         formBtn.innerHTML = '<span>Failed!</span>';
-                        alert(JSON.stringify(err));
+                        this.showToast('Failed to send message. Please try again.', 'error');
                         console.error('EmailJS Error:', err);
                         
                         setTimeout(() => {
@@ -222,6 +222,38 @@ class PageLoader {
                     });
             });
         }
+    }
+
+    showToast(message, type = 'success') {
+        // Create toast element
+        const toast = document.createElement('div');
+        toast.className = `fixed top-5 right-5 z-50 flex items-center gap-3 px-6 py-4 rounded-lg shadow-lg transform transition-all duration-300 translate-x-full opacity-0 ${
+            type === 'success' ? 'bg-white border-l-4 border-green-500 text-gray-800' : 'bg-white border-l-4 border-red-500 text-gray-800'
+        }`;
+        
+        // Icon based on type
+        const iconName = type === 'success' ? 'checkmark-circle' : 'alert-circle';
+        const iconColor = type === 'success' ? 'text-green-500' : 'text-red-500';
+        
+        toast.innerHTML = `
+            <ion-icon name="${iconName}" class="text-2xl ${iconColor}"></ion-icon>
+            <p class="font-medium">${message}</p>
+        `;
+
+        document.body.appendChild(toast);
+
+        // Animate in
+        requestAnimationFrame(() => {
+            toast.classList.remove('translate-x-full', 'opacity-0');
+        });
+
+        // Remove after 3 seconds
+        setTimeout(() => {
+            toast.classList.add('translate-x-full', 'opacity-0');
+            setTimeout(() => {
+                document.body.removeChild(toast);
+            }, 300);
+        }, 3000);
     }
 
     initBlogLinks() {
