@@ -198,7 +198,7 @@ class PageLoader {
 
                 // Replace these with your actual Service ID and Template ID
                 const serviceID = 'service_8li7jzn';
-                const templateID = 'template_69yq1ef';
+                const templateID = 'template_sex6dfh';
 
                 emailjs.sendForm(serviceID, templateID, form)
                     .then(() => {
