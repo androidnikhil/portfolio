@@ -79,56 +79,56 @@
   {
     "title": "Libbys Newsletter",
     "category": "Emailers",
-    "image": "assets/images/emailer_project.png",
+    "image": "assets/images/emailers/libbys_emailer.png",
     "link": "assets/emailers/Libbys-Emailer/libbys-Newsletter.html",
     "techStack": "HTML, CSS"
   },
   {
     "title": "Kikkoman August Email",
     "category": "Emailers",
-    "image": "assets/images/emailer_project.png",
+    "image": "assets/images/emailers/kikkoman_emailer.png",
     "link": "assets/emailers/kikkoman-August/kikkoman_august_email.html",
     "techStack": "HTML, CSS"
   },
   {
     "title": "Nestle Emailer",
     "category": "Emailers",
-    "image": "assets/images/emailer_project.png",
+    "image": "assets/images/emailers/nestle_emailer.png",
     "link": "assets/emailers/nestle.html",
     "techStack": "HTML, CSS"
   },
   {
     "title": "Hyundai October Newsletter",
     "category": "Emailers",
-    "image": "assets/images/emailer_project.png",
+    "image": "assets/images/emailers/hyundai_emailer.png",
     "link": "assets/emailers/hyundai/oct_enl.html",
     "techStack": "HTML, CSS"
   },
   {
     "title": "AEB ECN",
     "category": "Emailers",
-    "image": "assets/images/emailer_project.png",
+    "image": "assets/images/emailers/aeb_emailer.png",
     "link": "assets/emailers/AEB/ecn.html",
     "techStack": "HTML, CSS"
   },
   {
     "title": "AEB September",
     "category": "Emailers",
-    "image": "assets/images/emailer_project.png",
+    "image": "assets/images/emailers/aeb_emailer.png",
     "link": "assets/emailers/AEB/aeb_september.html",
     "techStack": "HTML, CSS"
   },
   {
     "title": "AEB November",
     "category": "Emailers",
-    "image": "assets/images/emailer_project.png",
+    "image": "assets/images/emailers/aeb_emailer.png",
     "link": "assets/emailers/AEB/aeb_november.html",
     "techStack": "HTML, CSS"
   },
   {
     "title": "CA Walnuts SmartBrief (600px)",
     "category": "Emailers",
-    "image": "assets/images/emailer_project.png",
+    "image": "assets/images/emailers/ca_walnuts_emailer.png",
     "link": "assets/emailers/2025_CAW_Today_Dietitan_eBlast_HTML/SmartBrief_CA-Walnuts_600px.html",
     "techStack": "HTML, CSS"
   },
@@ -170,70 +170,70 @@
   {
     "title": "Kikkoman October Newsletter",
     "category": "Emailers",
-    "image": "assets/images/emailer_project.png",
+    "image": "assets/images/emailers/kikkoman_emailer.png",
     "link": "assets/emailers/kikkoman-August/kikkoman_october_newsletter.html",
     "techStack": "HTML, CSS"
   },
   {
     "title": "Kikkoman May Email",
     "category": "Emailers",
-    "image": "assets/images/emailer_project.png",
+    "image": "assets/images/emailers/kikkoman_emailer.png",
     "link": "assets/emailers/kikkoman-August/kikkoman_may_email.html",
     "techStack": "HTML, CSS"
   },
   {
     "title": "Kikkoman June Email",
     "category": "Emailers",
-    "image": "assets/images/emailer_project.png",
+    "image": "assets/images/emailers/kikkoman_emailer.png",
     "link": "assets/emailers/kikkoman-August/kikkoman_june.html",
     "techStack": "HTML, CSS"
   },
   {
     "title": "Kikkoman Homecooks Feb",
     "category": "Emailers",
-    "image": "assets/images/emailer_project.png",
+    "image": "assets/images/emailers/kikkoman_emailer.png",
     "link": "assets/emailers/kikkoman-August/kikkoman_homecooks_february.html",
     "techStack": "HTML, CSS"
   },
   {
     "title": "Kikkoman Foodservice Nov",
     "category": "Emailers",
-    "image": "assets/images/emailer_project.png",
+    "image": "assets/images/emailers/kikkoman_emailer.png",
     "link": "assets/emailers/kikkoman-August/kikkoman_foodservice_nov.html",
     "techStack": "HTML, CSS"
   },
   {
     "title": "Kikkoman February Email",
     "category": "Emailers",
-    "image": "assets/images/emailer_project.png",
+    "image": "assets/images/emailers/kikkoman_emailer.png",
     "link": "assets/emailers/kikkoman-August/kikkoman_february_email.html",
     "techStack": "HTML, CSS"
   },
   {
     "title": "Kikkoman March Email",
     "category": "Emailers",
-    "image": "assets/images/emailer_project.png",
+    "image": "assets/images/emailers/kikkoman_emailer.png",
     "link": "assets/emailers/kikkoman-August/kikkoman_march_email.html",
     "techStack": "HTML, CSS"
   },
   {
     "title": "Kikkoman January Email",
     "category": "Emailers",
-    "image": "assets/images/emailer_project.png",
+    "image": "assets/images/emailers/kikkoman_emailer.png",
     "link": "assets/emailers/kikkoman-August/kikkoman_january.html",
     "techStack": "HTML, CSS"
   },
   {
     "title": "Kikkoman Foodservice Quarterly",
     "category": "Emailers",
-    "image": "assets/images/emailer_project.png",
+    "image": "assets/images/emailers/kikkoman_emailer.png",
     "link": "assets/emailers/kikkoman-August/foodservice-Quaterly-email.html",
     "techStack": "HTML, CSS"
   },
   {
     "title": "Kikkoman Kids Love",
     "category": "Emailers",
-    "image": "assets/images/emailer_project.png",
+    "image": "assets/images/emailers/kikkoman_emailer.png",
     "link": "assets/emailers/kikkoman-August/kikkoman_kids_love.html",
     "techStack": "HTML, CSS"
   }
